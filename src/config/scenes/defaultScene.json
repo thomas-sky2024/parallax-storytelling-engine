@@ -1,0 +1,99 @@
+{
+  "id": "defaultScene",
+  "title": "Cinematic Parallax",
+  "durationInFrames": 450,
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+
+  "camera": {
+    "startX": -12,
+    "endX": 12,
+    "startY": 0,
+    "endY": 0,
+    "z": 8,
+    "fov": 50,
+    "lookAtY": 0
+  },
+
+  "shake": {
+    "preset": "handheld",
+    "amplitude": 0,
+    "frequency": 0,
+    "seed": 42,
+    "axes": { "x": true, "y": true, "z": true }
+  },
+
+  "dof": {
+    "enabled": true,
+    "focusDistance": 0.025,
+    "focalLength": 0.12,
+    "bokehScale": 5,
+    "autoFocus": {
+      "enabled": false,
+      "layerId": "mid"
+    }
+  },
+
+  "speedRamp": {
+    "enabled": false,
+    "minSpeed": 0.4,
+    "easeIn": true,
+    "easeOut": true,
+    "easeType": "easeInOutCubic"
+  },
+
+  "depthFade": {
+    "enabled": true,
+    "nearZ": -5,
+    "farZ": -30,
+    "minOpacity": 0.3
+  },
+
+  "layers": [
+    {
+      "id": "sky",
+      "url": "/assets/sky.png",
+      "z": -40,
+      "scale": 48,
+      "parallaxFactor": 0.05,
+      "xOffset": 0,
+      "yOffset": 3,
+      "opacity": 1,
+      "depthFade": false
+    },
+    {
+      "id": "bg",
+      "url": "/assets/bg.png",
+      "z": -28,
+      "scale": 32,
+      "parallaxFactor": 0.15,
+      "xOffset": 0,
+      "yOffset": 0,
+      "opacity": 1,
+      "depthFade": true
+    },
+    {
+      "id": "mid",
+      "url": "/assets/mid.png",
+      "z": -14,
+      "scale": 18,
+      "parallaxFactor": 0.65,
+      "xOffset": 1,
+      "yOffset": -0.5,
+      "opacity": 1,
+      "depthFade": true
+    },
+    {
+      "id": "fore",
+      "url": "/assets/fore.png",
+      "z": -4,
+      "scale": 9,
+      "parallaxFactor": 1.4,
+      "xOffset": -2,
+      "yOffset": -1.2,
+      "opacity": 1,
+      "depthFade": false
+    }
+  ]
+}

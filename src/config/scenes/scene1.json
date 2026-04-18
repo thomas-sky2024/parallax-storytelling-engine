@@ -1,0 +1,76 @@
+{
+  "id": "scene1",
+  "title": "The Awakening",
+  "durationInFrames": 300,
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "camera": {
+    "startX": -8,
+    "endX": 8,
+    "startY": 0,
+    "endY": 0.5,
+    "z": 8,
+    "fov": 45,
+    "lookAtY": 0
+  },
+  "shake": {
+    "preset": "handheld",
+    "amplitude": 1.2,
+    "frequency": 1.0,
+    "seed": 101,
+    "axes": { "x": true, "y": true, "z": true }
+  },
+  "dof": {
+    "enabled": true,
+    "focusDistance": 0.025,
+    "focalLength": 0.15,
+    "bokehScale": 6,
+    "rackFocus": {
+      "enabled": true,
+      "fromLayerId": "fore",
+      "toLayerId": "mid",
+      "startProgress": 0.3,
+      "endProgress": 0.7
+    }
+  },
+  "speedRamp": {
+    "enabled": true,
+    "minSpeed": 0.5,
+    "easeIn": true,
+    "easeOut": true,
+    "easeType": "easeInOutCubic"
+  },
+  "layers": [
+    {
+      "id": "sky",
+      "url": "/assets/sky.png",
+      "z": -40,
+      "scale": 48,
+      "parallaxFactor": 0.05
+    },
+    {
+      "id": "bg",
+      "url": "/assets/bg.png",
+      "z": -28,
+      "scale": 32,
+      "parallaxFactor": 0.2,
+      "depthFade": true
+    },
+    {
+      "id": "mid",
+      "url": "/assets/mid.png",
+      "z": -14,
+      "scale": 18,
+      "parallaxFactor": 0.7,
+      "depthFade": true
+    },
+    {
+      "id": "fore",
+      "url": "/assets/fore.png",
+      "z": -4,
+      "scale": 9,
+      "parallaxFactor": 1.5
+    }
+  ]
+}

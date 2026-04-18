@@ -1,0 +1,37 @@
+{
+  "name": "parallax-storytelling-engine",
+  "version": "1.0.0",
+  "description": "Cinematic parallax engine built with Remotion + React Three Fiber",
+  "scripts": {
+    "start": "remotion studio",
+    "build": "remotion render",
+    "render": "remotion render ParallaxStory out/video.mp4",
+    "render:prores": "remotion render ParallaxStory out/video.mov --codec=prores",
+    "render:4k": "remotion render ParallaxStory out/video_4k.mp4 --scale=2",
+    "upgrade": "remotion upgrade",
+    "lint": "eslint src --ext .ts,.tsx"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.109.0",
+    "@react-three/fiber": "^8.16.0",
+    "@react-three/postprocessing": "^2.16.0",
+    "maath": "^0.10.8",
+    "postprocessing": "^6.34.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.0",
+    "three": "^0.169.0"
+  },
+  "devDependencies": {
+    "@remotion/cli": "^4.0.0",
+    "@types/react": "^18.3.1",
+    "@types/three": "^0.167.0",
+    "typescript": "^5.4.5"
+  },
+  "overrides": {
+    "three-mesh-bvh": "0.8.2"
+  },
+  "remotion": {
+    "entryPoint": "src/index.tsx"
+  }
+}

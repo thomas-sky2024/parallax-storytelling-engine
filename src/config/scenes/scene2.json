@@ -1,0 +1,66 @@
+{
+  "id": "scene2",
+  "title": "The Storm Beyond",
+  "durationInFrames": 300,
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "camera": {
+    "startX": 10,
+    "endX": -10,
+    "startY": 0.5,
+    "endY": -0.5,
+    "z": 10,
+    "fov": 60,
+    "lookAtY": -0.5
+  },
+  "shake": {
+    "preset": "earthquake",
+    "amplitude": 1.5,
+    "frequency": 2.0,
+    "seed": 202,
+    "axes": { "x": true, "y": true, "z": true }
+  },
+  "dof": {
+    "enabled": true,
+    "focusDistance": 0.05,
+    "focalLength": 0.1,
+    "bokehScale": 4,
+    "autoFocus": {
+      "enabled": true,
+      "layerId": "bg"
+    }
+  },
+  "layers": [
+    {
+      "id": "sky",
+      "url": "/assets/sky.png",
+      "z": -40,
+      "scale": 55,
+      "parallaxFactor": 0.03
+    },
+    {
+      "id": "bg",
+      "url": "/assets/bg.png",
+      "z": -28,
+      "scale": 35,
+      "parallaxFactor": 0.25,
+      "depthFade": true
+    },
+    {
+      "id": "mid",
+      "url": "/assets/mid.png",
+      "z": -14,
+      "scale": 20,
+      "parallaxFactor": 0.8,
+      "depthFade": true
+    },
+    {
+      "id": "fore",
+      "url": "/assets/fore.png",
+      "z": -4,
+      "scale": 11,
+      "parallaxFactor": 1.8
+    }
+  ]
+}
