@@ -46,14 +46,14 @@
       "id": "sky",
       "url": "/assets/sky.png",
       "z": -40,
-      "scale": 48,
+      "scale": 55,
       "parallaxFactor": 0
     },
     {
       "id": "bg",
       "url": "/assets/bg.png",
       "z": -28,
-      "scale": 32,
+      "scale": 45,
       "parallaxFactor": 0.1,
       "depthFade": true
     },
@@ -61,7 +61,7 @@
       "id": "mid",
       "url": "/assets/mid.png",
       "z": -14,
-      "scale": 18,
+      "scale": 25,
       "parallaxFactor": 1,
       "depthFade": true
     },
@@ -69,7 +69,7 @@
       "id": "fore",
       "url": "/assets/fore.png",
       "z": -4,
-      "scale": 9,
+      "scale": 15,
       "parallaxFactor": 1
     }
   ]

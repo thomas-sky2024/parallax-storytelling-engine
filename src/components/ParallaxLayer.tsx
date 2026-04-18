@@ -1,6 +1,6 @@
 import { useRef, useMemo } from 'react';
 import { Image } from '@react-three/drei';
-import { useCurrentFrame, staticFile } from 'remotion';
+import { useCurrentFrame, staticFile, useVideoConfig } from 'remotion';
 import { LayerConfig, DepthFadeConfig, CameraConfig } from '../types';
 import { computeDepthOpacity } from '../utils/depthFade';
 import { interpolateEased } from '../utils/easing';
@@ -25,6 +25,8 @@ export const ParallaxLayer = ({
   totalFrames = 450,
 }: ParallaxLayerProps) => {
   const frame = useCurrentFrame();
+  const { width, height } = useVideoConfig();
+  const aspectRatio = width / height;
 
   // ── Parallax X position ───────────────────────────────────────────────────
   // Camera travels from startX to endX.
@@ -64,7 +66,7 @@ export const ParallaxLayer = ({
     <Image
       url={staticFile(layer.url)}
       position={[layerX, layerY, layer.z]}
-      scale={scale}
+      scale={[scale * aspectRatio, scale, 1]}
       transparent
       opacity={opacity}
     />
