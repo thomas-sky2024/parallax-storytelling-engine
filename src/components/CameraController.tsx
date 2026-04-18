@@ -83,8 +83,8 @@ export const CameraController = ({
     // Roll (Z-rotation)
     camera.rotation.z = shakeRoll;
 
-    // Look at target
-    camera.lookAt(baseX * 0.1, cameraConfig.lookAtY ?? 0, 0);
+    // Look at target (synchronized with X to create a tracking shot)
+    camera.lookAt(baseX, cameraConfig.lookAtY ?? 0, 0);
 
     // FOV
     if ('fov' in camera) {

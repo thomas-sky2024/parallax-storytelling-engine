@@ -41,9 +41,10 @@ export const ParallaxLayer = ({
   );
 
   // Layer counteracts camera movement by parallaxFactor
-  // A layer with factor=0.15 moves 15% as much as the camera → appears far away
-  const layerX = (layer.xOffset ?? 0) + cameraX * (layer.parallaxFactor - 1);
-  const layerY = (layer.yOffset ?? 0) + cameraY * (layer.parallaxFactor - 1);
+  // A layer with factor=0 moves with camera (infinity/skybox)
+  // A layer with factor=1 stays in world space (natural 3D perspective)
+  const layerX = (layer.xOffset ?? 0) + cameraX * (1 - layer.parallaxFactor);
+  const layerY = (layer.yOffset ?? 0) + cameraY * (1 - layer.parallaxFactor);
 
   // ── Depth Fade opacity ────────────────────────────────────────────────────
   const opacity = useMemo(() => {
